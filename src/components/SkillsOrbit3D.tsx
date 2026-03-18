@@ -21,11 +21,12 @@ type SkillsOrbit3DProps = {
     reducedQuality: boolean;
     highlightedSkillIndex?: number | null;
     onHighlightChange?: (index: number | null) => void;
+    visibleSkillNames?: string[];
 };
 
 type OrbitSystemProps = SkillsOrbit3DProps;
 
-function OrbitSystem({ skills, paused, reducedQuality, highlightedSkillIndex = null, onHighlightChange }: OrbitSystemProps) {
+function OrbitSystem({ skills, paused, reducedQuality, highlightedSkillIndex = null, onHighlightChange, visibleSkillNames }: OrbitSystemProps) {
     const systemBaseY = -0.18;
     const rigRef = useRef<Group>(null);
     const sunRef = useRef<Mesh>(null);
@@ -40,12 +41,12 @@ function OrbitSystem({ skills, paused, reducedQuality, highlightedSkillIndex = n
         orbitAnglesRef.current = skills.map((skill) => MathUtils.degToRad(skill.angle));
     }, [skills]);
 
-    const orbitRadii = useMemo(() => skills.map((_, index) => 1.2 + index * 0.4), [skills]);
+    const orbitRadii = useMemo(() => skills.map((_, index) => 1.45 + index * 0.22), [skills]);
     const orbitTilts = useMemo(
         () => skills.map((_, index) => (index % 2 === 0 ? 1 : -1) * (0.24 + (index % 3) * 0.2)),
         [skills]
     );
-    const baseScale = reducedQuality ? 1.08 : 1.28;
+    const baseScale = reducedQuality ? 1.2 : 1.5;
     const maxOrbitRadius = useMemo(() => orbitRadii.reduce((max, radius) => Math.max(max, radius), 0), [orbitRadii]);
     const visualRadius = maxOrbitRadius + 0.92;
 
@@ -132,6 +133,9 @@ function OrbitSystem({ skills, paused, reducedQuality, highlightedSkillIndex = n
             <pointLight position={[0, 1.8, -3.5]} intensity={6} color="#7ec6ff" />
 
             {skills.map((skill, index) => {
+                const isVisible = visibleSkillNames ? visibleSkillNames.includes(skill.name) : true;
+                if (!isVisible) return null;
+
                 const radius = orbitRadii[index];
                 return (
                     <group
@@ -223,6 +227,7 @@ export const SkillsOrbit3D = memo(function SkillsOrbit3D({
     reducedQuality,
     highlightedSkillIndex = null,
     onHighlightChange,
+    visibleSkillNames,
 }: SkillsOrbit3DProps) {
     return (
         <div className="skills-orbit-canvas">
@@ -241,6 +246,7 @@ export const SkillsOrbit3D = memo(function SkillsOrbit3D({
                     reducedQuality={reducedQuality}
                     highlightedSkillIndex={highlightedSkillIndex}
                     onHighlightChange={onHighlightChange}
+                    visibleSkillNames={visibleSkillNames}
                 />
             </Canvas>
         </div>

@@ -19,6 +19,19 @@ const skills: OrbitSkill[] = [
     { name: "Prisma ORM", percent: 88, orbit: 195, duration: 20, angle: 284, glow: "#5EEAD4" },
     { name: "MySQL", percent: 85, orbit: 145, duration: 15, angle: 332, glow: "#60A5FA" },
     { name: "React Native", percent: 84, orbit: 305, duration: 34, angle: 36, glow: "#61DAFB" },
+    { name: "Microsoft SQL", percent: 80, orbit: 160, duration: 22, angle: 250, glow: "#CC2927" },
+    { name: "MongoDB", percent: 75, orbit: 180, duration: 26, angle: 140, glow: "#47A248" },
+    { name: "CouchDB", percent: 70, orbit: 320, duration: 32, angle: 300, glow: "#E42528" },
+    { name: "RESTful API", percent: 95, orbit: 210, duration: 25, angle: 80, glow: "#FF7043" },
+    { name: "Docker", percent: 75, orbit: 290, duration: 35, angle: 190, glow: "#2496ED" },
+    { name: "GitHub Actions", percent: 70, orbit: 240, duration: 29, angle: 45, glow: "#2088FF" },
+    { name: "GitLab CI", percent: 65, orbit: 260, duration: 31, angle: 320, glow: "#FC6D26" },
+    { name: "PHP", percent: 80, orbit: 200, duration: 23, angle: 165, glow: "#777BB4" },
+    { name: "Python", percent: 75, orbit: 280, duration: 33, angle: 275, glow: "#3776AB" },
+    { name: "Javascript", percent: 90, orbit: 150, duration: 19, angle: 10, glow: "#F7DF1E" },
+    { name: "Git", percent: 90, orbit: 230, duration: 28, angle: 130, glow: "#F05032" },
+    { name: "Postman", percent: 95, orbit: 185, duration: 21, angle: 220, glow: "#FF6C37" },
+    { name: "Bun", percent: 85, orbit: 135, duration: 16, angle: 90, glow: "#FBF0DF" },
 ];
 
 const technicalStacks = [
@@ -36,6 +49,7 @@ export function Skills() {
     const panelRef = useRef<HTMLDivElement>(null);
     const isPanelInView = useInView(panelRef, { amount: 0.36 });
     const [activeSkillIndex, setActiveSkillIndex] = useState<number | null>(null);
+    const [visibleSkillNames, setVisibleSkillNames] = useState<string[]>(["Node.js", "ExpressJS", "NestJS", "Next.js", "Prisma ORM", "MySQL", "React Native"]);
     const reducedQuality = useMemo(() => {
         if (typeof window === "undefined") {
             return false;
@@ -72,6 +86,7 @@ export function Skills() {
                         reducedQuality={reducedQuality || Boolean(shouldReduceMotion)}
                         highlightedSkillIndex={activeSkillIndex}
                         onHighlightChange={setActiveSkillIndex}
+                        visibleSkillNames={visibleSkillNames}
                     />
                 </motion.div>
 
@@ -98,31 +113,37 @@ export function Skills() {
                                             );
                                             const isInteractive = skillIndex !== -1;
                                             const skill = isInteractive ? skills[skillIndex] : null;
+                                            const isVisible = skill && visibleSkillNames.includes(skill.name);
 
                                             return (
                                                 <button
                                                     key={itemText}
                                                     type="button"
                                                     disabled={!isInteractive}
-                                                    onMouseEnter={() => isInteractive && setActiveSkillIndex(skillIndex)}
+                                                    onClick={() => isInteractive && skill && setVisibleSkillNames(prev =>
+                                                        prev.includes(skill.name)
+                                                            ? prev.filter(n => n !== skill.name)
+                                                            : [...prev, skill.name]
+                                                    )}
+                                                    onMouseEnter={() => isInteractive && isVisible && setActiveSkillIndex(skillIndex)}
                                                     onMouseLeave={() => isInteractive && setActiveSkillIndex(null)}
-                                                    onFocus={() => isInteractive && setActiveSkillIndex(skillIndex)}
+                                                    onFocus={() => isInteractive && isVisible && setActiveSkillIndex(skillIndex)}
                                                     onBlur={() => isInteractive && setActiveSkillIndex(null)}
                                                     className={`
                                                         rounded-md border px-2.5 py-1 text-xs font-medium transition-all duration-300
                                                         ${isInteractive
-                                                            ? activeSkillIndex === skillIndex
+                                                            ? isVisible
                                                                 ? "border-cyan-400 bg-cyan-400/20 text-cyan-100 shadow-[0_0_15px_rgba(34,211,238,0.3)]"
-                                                                : "border-slate-700 bg-slate-800/50 text-slate-300 hover:border-cyan-500/50 hover:bg-slate-800 hover:text-cyan-200"
-                                                            : "cursor-default border-transparent bg-slate-800/30 text-slate-400"
+                                                                : "border-slate-700 bg-slate-800/30 text-slate-400 hover:border-cyan-500/50 hover:bg-slate-800 hover:text-cyan-200"
+                                                            : "cursor-default border-transparent bg-slate-800/20 text-slate-500/50"
                                                         }
                                                     `}
                                                 >
-                                                    {/* If it's a 3D skill, show a tiny dot */}
+                                                    {/* If it's a 3D skill, show a tiny dot if visible */}
                                                     {isInteractive && (
                                                         <span
-                                                            className="mr-1.5 inline-block h-1.5 w-1.5 rounded-full"
-                                                            style={{ backgroundColor: skill?.glow, boxShadow: activeSkillIndex === skillIndex ? `0 0 8px ${skill?.glow}` : 'none' }}
+                                                            className={`mr-1.5 inline-block h-1.5 w-1.5 rounded-full transition-colors duration-300 ${isVisible ? '' : 'bg-slate-600'}`}
+                                                            style={isVisible ? { backgroundColor: skill?.glow, boxShadow: activeSkillIndex === skillIndex ? `0 0 8px ${skill?.glow}` : 'none' } : {}}
                                                         />
                                                     )}
                                                     {normalizedText}
