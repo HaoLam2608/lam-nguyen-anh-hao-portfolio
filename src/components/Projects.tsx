@@ -171,7 +171,7 @@ function ProjectCard({ project, index, shouldReduceMotion, onOpen }: ProjectCard
                         className="ml-auto inline-flex items-center gap-2 text-sm text-cyan-100"
                         onClick={() => onOpen(project)}
                     >
-                        Chi tiet <Rocket className="h-4 w-4" />
+                        Details <Rocket className="h-4 w-4" />
                     </button>
                 </div>
             </div>
