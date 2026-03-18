@@ -32,12 +32,20 @@ export function About() {
                     transition={{ duration: 0.75 }}
                     className="relative mx-auto flex flex-col items-center"
                 >
-                    <div className="profile-orbit">
-                        <div className="profile-avatar overflow-hidden">
-                            <img className="h-full w-full object-cover" src="/avatar.jpg" alt="Avatar" onError={(e) => { e.currentTarget.style.display = 'none'; e.currentTarget.parentElement!.innerHTML = 'LNAH' }} />
+                    <div className="relative aspect-[3/4] w-64 overflow-hidden rounded-[2rem] border-4 border-cyan-500 bg-slate-800 shadow-[0_0_100px_-20px_rgba(6,182,212,0.4)] md:w-80">
+                        <img
+                            className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
+                            src="/avatar.jpg"
+                            alt="Avatar"
+                            onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                                e.currentTarget.parentElement!.classList.add('flex', 'items-center', 'justify-center');
+                                e.currentTarget.parentElement!.innerHTML = '<span class="text-4xl font-black text-cyan-500/50">LNAH</span>';
+                            }}
+                        />
+                        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-cyan-500/30 bg-slate-950/80 px-6 py-2 text-sm font-bold uppercase tracking-wider text-cyan-50 backdrop-blur-md shadow-lg">
+                            Lam Nguyen Anh Hao
                         </div>
-                        <div className="orbit-line orbit-line-one" />
-                        <div className="orbit-line orbit-line-two" />
                     </div>
 
                     <button
