@@ -37,12 +37,16 @@ const skills: OrbitSkill[] = [
     { name: "Socket.IO", percent: 85, orbit: 215, duration: 25, angle: 150, glow: "#010101" },
     { name: "Fabric", percent: 80, orbit: 295, duration: 32, angle: 70, glow: "#2F3134" },
     { name: "Firebase", percent: 75, orbit: 190, duration: 22, angle: 230, glow: "#FFCA28" },
+    { name: "IPFS", percent: 70, orbit: 255, duration: 30, angle: 280, glow: "#0090FF" },
+    { name: "Hyperledger", percent: 65, orbit: 275, duration: 34, angle: 340, glow: "#2F3134" },
+    { name: "Tailwind", percent: 85, orbit: 120, duration: 18, angle: 200, glow: "#38BDF8" },
+
 ];
 
 const technicalStacks = [
     { label: "Backend Development", items: "Node.js, ExpressJS, NestJS, Socket.IO" },
     { label: "Frontend Development", items: "ReactJS, Next.js, React Native, Tailwind" },
-    { label: "Blockchain & Security", items: "Hyperledger Fabric, IPFS, JWT" },
+    { label: "Blockchain & Security", items: "Hyperledger Fabric, IPFS" },
     { label: "Databases", items: "MySQL, SQL Server, MongoDB, Firebase" },
     { label: "ORM & API", items: "Prisma ORM, Sequelize, RESTful API" },
     { label: "DevOps & Cloud", items: "Docker, GitHub Actions, GitLab CI" },
