@@ -15,15 +15,15 @@ type TimelineEntry = {
 
 const timeline: TimelineEntry[] = [
     {
-        period: "Jun. 2024 -- Present",
+        period: "Mar. 2024 -- Present",
         title: "Full Stack Developer",
         organization: "SOF - Solution of Future",
         location: "Ho Chi Minh City, Vietnam",
         bullets: [
-            "Participated in the development of the sales module, optimizing the order management and processing workflow from order placement to successful delivery, resulting in increased operational efficiency.",
-            "Successfully integrated payment gateways such as SePay and ZaloPay, ensuring a secure, fast, and accurate online transaction flow.",
-            "Designed and implemented task management module, applying the Kanban methodology to optimize task delegation, progress tracking, and team collaboration.",
-            "Took charge of comprehensive full-stack development, ensuring the stability of the backend system and a smooth frontend experience.",
+            "Developed core modules for the Enterprise Resource Planning (ERP) system, focusing on the sales module to optimize order management and processing workflows.",
+            "Successfully integrated payment gateways such as SePay and ZaloPay into the ERP ecosystem, ensuring a secure, fast, and accurate online transaction flow.",
+            "Designed and implemented the internal Task Management module within the ERP, applying Kanban methodology to optimize task delegation and team collaboration.",
+            "Took charge of comprehensive full-stack development for the ERP system, ensuring backend stability and a seamless frontend experience.",
         ],
     },
 ];

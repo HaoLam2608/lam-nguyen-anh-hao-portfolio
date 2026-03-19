@@ -16,6 +16,7 @@ const skills: OrbitSkill[] = [
     { name: "ExpressJS", percent: 89, orbit: 170, duration: 18, angle: 118, glow: "#9CA3AF" },
     { name: "NestJS", percent: 87, orbit: 270, duration: 30, angle: 58, glow: "#EA2845" },
     { name: "Next.js", percent: 86, orbit: 245, duration: 27, angle: 214, glow: "#E5E7EB" },
+    { name: "ReactJS", percent: 85, orbit: 200, duration: 22, angle: 165, glow: "#61DAFB" },
     { name: "Prisma ORM", percent: 88, orbit: 195, duration: 20, angle: 284, glow: "#5EEAD4" },
     { name: "MySQL", percent: 85, orbit: 145, duration: 15, angle: 332, glow: "#60A5FA" },
     { name: "React Native", percent: 84, orbit: 305, duration: 34, angle: 36, glow: "#61DAFB" },
@@ -32,15 +33,20 @@ const skills: OrbitSkill[] = [
     { name: "Git", percent: 90, orbit: 230, duration: 28, angle: 130, glow: "#F05032" },
     { name: "Postman", percent: 95, orbit: 185, duration: 21, angle: 220, glow: "#FF6C37" },
     { name: "Bun", percent: 85, orbit: 135, duration: 16, angle: 90, glow: "#FBF0DF" },
+    { name: "TypeScript", percent: 88, orbit: 165, duration: 20, angle: 300, glow: "#3178C6" },
+    { name: "Socket.IO", percent: 85, orbit: 215, duration: 25, angle: 150, glow: "#010101" },
+    { name: "Fabric", percent: 80, orbit: 295, duration: 32, angle: 70, glow: "#2F3134" },
+    { name: "Firebase", percent: 75, orbit: 190, duration: 22, angle: 230, glow: "#FFCA28" },
 ];
 
 const technicalStacks = [
-    { label: "Backend Development", items: "Node.js, ExpressJS, NestJS" },
-    { label: "Frontend Development", items: "React Native (Mobile), Next.js" },
-    { label: "Databases", items: "MySQL, Microsoft SQL, MongoDB, CouchDB" },
-    { label: "ORM & API", items: "Prisma ORM, RESTful API" },
+    { label: "Backend Development", items: "Node.js, ExpressJS, NestJS, Socket.IO" },
+    { label: "Frontend Development", items: "ReactJS, Next.js, React Native, Tailwind" },
+    { label: "Blockchain & Security", items: "Hyperledger Fabric, IPFS, JWT" },
+    { label: "Databases", items: "MySQL, SQL Server, MongoDB, Firebase" },
+    { label: "ORM & API", items: "Prisma ORM, Sequelize, RESTful API" },
     { label: "DevOps & Cloud", items: "Docker, GitHub Actions, GitLab CI" },
-    { label: "Programming Languages", items: "PHP, Python, Javascript" },
+    { label: "Programming Languages", items: "TypeScript, JavaScript, Python, PHP" },
     { label: "Other Tools", items: "Git, Postman, Bun" },
 ];
 

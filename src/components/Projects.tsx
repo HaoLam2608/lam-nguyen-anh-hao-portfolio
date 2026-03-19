@@ -14,7 +14,7 @@ import {
 import { ExternalLink, Rocket } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
 
-type Category = "All" | "Education Platform" | "E-commerce Platform";
+type Category = "All" | "Education Platform" | "E-commerce Platform" | "Blockchain Platform" | "Management System";
 
 type Project = {
     title: string;
@@ -27,9 +27,39 @@ type Project = {
     articleLink?: string;
 };
 
-const categories: Category[] = ["All", "Education Platform", "E-commerce Platform"];
+const categories: Category[] = ["All", "Education Platform", "E-commerce Platform", "Blockchain Platform", "Management System"];
 
 const projects: Project[] = [
+    {
+        title: "Work Management System | Web & Mobile App",
+        description: "A cross-platform solution for efficient task delegation and tracking, featuring real-time collaboration and mobile attendance.",
+        category: "Management System",
+        role: "Full Stack Developer",
+        technologies: "Next.js; React Native Expo; Node.js; Express; Docker; GitHub Actions; Socket.IO; Firebase",
+        highlights: [
+            "Manager Dashboard (Web): Developed comprehensive project management tools featuring drag-and-drop Kanban, Calendar, and Timeline views; implemented task delegation and strict approval workflows.",
+            "Employee Workspace (Web/Mobile): Built personal dashboards for tracking Tasks/Subtasks, managing deadlines (Overdue/Due Soon), and updating status according to business workflows.",
+            "Timesheet & Worklog Management: Implemented detailed daily time tracking features with seamless synchronization of create/edit/delete operations between Web and Mobile platforms.",
+            "Mobile Application (React Native): Developed core business screens (Dashboard, Tasks, Available Subtasks, Kanban, Profile) optimized for mobile UX and performance.",
+            "Real-time Infrastructure: Integrated Socket.IO for live collaboration and Firebase Cloud Messaging for instant mobile notifications; implemented Role-Based Access Control (RBAC) and robust cross-platform data synchronization.",
+            "DevOps Implementation: Written Dockerfiles for containerizing web services and established CI/CD pipelines using GitHub Actions for automated build and deployment.",
+        ],
+        demo: "https://github.com/HaoLam2608/quanlycongviec.git",
+    },
+    {
+        title: "Degree Verification System | Blockchain & AI Platform",
+        description: "Architected a decentralized degree verification system ensuring data integrity and non-repudiation.",
+        category: "Blockchain Platform",
+        role: "Full Stack Developer & System Architect",
+        technologies: "Hyperledger Fabric; Node.js; ReactJS; React Native; Python; IPFS",
+        highlights: [
+            "System Architecture: Designed a comprehensive 5-step API flow: AI Verification → RSA Digital Signature → IPFS Storage → Ledger Recording, ensuring Data Integrity and Non-repudiation.",
+            "Backend & Blockchain: Developed Node.js Gateway for Hyperledger Fabric; optimized architecture by offloading static files to IPFS and storing only Metadata/CID on-chain to maximize TPS.",
+            "Frontend & Algorithms: Built a React Admin Panel with strict RBAC; implemented Fuzzy Auto-mapping algorithms for Excel Batch Import and concurrent processing of large image datasets.",
+            "AI Integration: Designed a Cross-check Validation Engine to automatically highlight discrepancies between OCR data and original records, streamlining the verification process.",
+        ],
+        demo: "https://svnckh.huit.edu.vn/researchtopic/topic/librarydetail/2573?year=2025",
+    },
     {
         title: "Smarthmath | Smart Math Learning Platform",
         description: "Built a production-ready learning platform backend with real-time analytics and a comprehensive admin architecture.",
