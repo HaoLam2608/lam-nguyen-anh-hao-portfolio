@@ -40,6 +40,7 @@ const skills: OrbitSkill[] = [
     { name: "IPFS", percent: 70, orbit: 255, duration: 30, angle: 280, glow: "#0090FF" },
     { name: "Hyperledger", percent: 65, orbit: 275, duration: 34, angle: 340, glow: "#2F3134" },
     { name: "Tailwind", percent: 85, orbit: 120, duration: 18, angle: 200, glow: "#38BDF8" },
+    { name: "SQL Server", percent: 65, orbit: 260, duration: 31, angle: 320, glow: "#FC6D26" },
 
 ];
 
