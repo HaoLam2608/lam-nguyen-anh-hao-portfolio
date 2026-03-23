@@ -54,8 +54,9 @@ const projects: Project[] = [
         technologies: "Hyperledger Fabric; Node.js; ReactJS; React Native; Python; IPFS",
         highlights: [
             "System Architecture: Designed a comprehensive 5-step API flow: AI Verification → RSA Digital Signature → IPFS Storage → Ledger Recording, ensuring Data Integrity and Non-repudiation.",
-            "Backend & Blockchain: Developed Node.js Gateway for Hyperledger Fabric; optimized architecture by offloading static files to IPFS and storing only Metadata/CID on-chain to maximize TPS.",
+            "Backend & Blockchain: Designed RESTful APIs and developed Node.js Gateway for Hyperledger Fabric; optimized architecture by offloading static files to IPFS and storing only Metadata/CID on-chain to maximize TPS.",
             "Frontend & Algorithms: Built a React Admin Panel with strict RBAC; implemented Fuzzy Auto-mapping algorithms for Excel Batch Import and concurrent processing of large image datasets.",
+            "Mobile App (React Native): Handled the User flow for the Student group, including login, fetching Profile Identity via API Gateway, viewing details, and visually displaying the Blockchain Credentials wallet containing personal degrees/certificates (Front/Back) on mobile devices.",
             "AI Integration: Designed a Cross-check Validation Engine to automatically highlight discrepancies between OCR data and original records, streamlining the verification process.",
         ],
         demo: "https://svnckh.huit.edu.vn/researchtopic/topic/librarydetail/2573?year=2025",
