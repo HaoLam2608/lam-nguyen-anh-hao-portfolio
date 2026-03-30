@@ -2,16 +2,18 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionTitle } from "./SectionTitle";
+import { useI18n } from "@/i18n/I18nProvider";
 
 export function Awards() {
+    const { t } = useI18n();
     const shouldReduceMotion = useReducedMotion();
 
     return (
         <section id="awards" className="section-space px-4 md:px-8">
             <SectionTitle
-                eyebrow="Honors"
-                title="Awards & Recognition"
-                description="Notable achievements and recognition for academic excellence and research contributions."
+                eyebrow={t.awards.eyebrow}
+                title={t.awards.title}
+                description={t.awards.description}
             />
 
             <div className="mx-auto w-full max-w-5xl">
@@ -24,12 +26,12 @@ export function Awards() {
                         transition={{ duration: 0.5 }}
                     >
                         <span className="timeline-dot" />
-                        <p className="text-sm uppercase tracking-[0.2em] text-cyan-100">2024 -- 2025</p>
-                        <h3 className="mt-2 text-xl font-semibold text-white">First Prize - Faculty-level Student Scientific Research Competition</h3>
-                        <p className="text-sm uppercase tracking-[0.14em] text-orange-200/90">Ho Chi Minh City University of Industry and Trade (HUIT)</p>
+                        <p className="text-sm uppercase tracking-[0.2em] text-cyan-100">{t.awards.period}</p>
+                        <h3 className="mt-2 text-xl font-semibold text-white">{t.awards.award}</h3>
+                        <p className="text-sm uppercase tracking-[0.14em] text-orange-200/90">{t.awards.organization}</p>
 
                         <p className="mt-3 leading-7 text-slate-300">
-                            Topic: Degree Presentation Application based on Blockchain leveraging Hyperledger Fabric.
+                            {t.awards.topic}
                         </p>
 
                         <a
@@ -38,7 +40,7 @@ export function Awards() {
                             rel="noreferrer"
                             className="mt-3 inline-flex text-sm font-medium text-cyan-100 hover:text-white"
                         >
-                            View Scientific Article
+                            {t.awards.viewArticle}
                         </a>
                     </motion.article>
                 </div>

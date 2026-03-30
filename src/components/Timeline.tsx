@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { SectionTitle } from "./SectionTitle";
+import { useI18n } from "@/i18n/I18nProvider";
 
 type TimelineEntry = {
     period: string;
@@ -13,30 +14,25 @@ type TimelineEntry = {
     link?: string;
 };
 
-const timeline: TimelineEntry[] = [
-    {
-        period: "Mar. 2024 -- Present",
-        title: "Full Stack Developer",
-        organization: "SOF - Solution of Future",
-        location: "Ho Chi Minh City, Vietnam",
-        bullets: [
-            "Developed core modules for the Enterprise Resource Planning (ERP) system, focusing on the sales module to optimize order management and processing workflows.",
-            "Successfully integrated payment gateways such as SePay and ZaloPay into the ERP ecosystem, ensuring a secure, fast, and accurate online transaction flow.",
-            "Designed and implemented the internal Task Management module within the ERP, applying Kanban methodology to optimize task delegation and team collaboration.",
-            "Took charge of comprehensive full-stack development for the ERP system, ensuring backend stability and a seamless frontend experience.",
-        ],
-    },
-];
-
 export function Timeline() {
+    const { t } = useI18n();
     const shouldReduceMotion = useReducedMotion();
+    const timeline: TimelineEntry[] = [
+        {
+            period: t.timeline.period,
+            title: t.timeline.role,
+            organization: t.timeline.company,
+            location: t.timeline.location,
+            bullets: [...t.timeline.bullets],
+        },
+    ];
 
     return (
         <section id="experience" className="section-space px-4 md:px-8">
             <SectionTitle
-                eyebrow="Experience"
-                title="Professional Experience"
-                description="My career journey, including key roles, responsibilities, and impactful outcomes."
+                eyebrow={t.timeline.eyebrow}
+                title={t.timeline.title}
+                description={t.timeline.description}
             />
 
             <div className="mx-auto w-full max-w-5xl">

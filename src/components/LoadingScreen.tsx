@@ -3,6 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Rocket } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useI18n } from "@/i18n/I18nProvider";
 
 const LOADING_DURATION_MS = 1850;
 
@@ -11,6 +12,7 @@ type LoadingScreenProps = {
 };
 
 export function LoadingScreen({ onDone }: LoadingScreenProps) {
+    const { t } = useI18n();
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {
@@ -52,7 +54,7 @@ export function LoadingScreen({ onDone }: LoadingScreenProps) {
                             animate={{ opacity: [0.5, 1, 0.5] }}
                             transition={{ duration: 1.2, repeat: Number.POSITIVE_INFINITY }}
                         >
-                            Igniting Warp Drive
+                            {t.loading.text}
                         </motion.p>
                     </div>
                 </motion.div>

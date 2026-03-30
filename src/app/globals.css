@@ -311,7 +311,7 @@ h6 {
 
 .skills-3d-panel {
   position: relative;
-  height: clamp(460px, 60vh, 680px);
+  height: clamp(700px, 83vh, 1120px);
   width: 100%;
   overflow: visible;
   border: none;

@@ -15,6 +15,8 @@ import { Skills } from "./Skills";
 import { SmoothScroll } from "./SmoothScroll";
 import { SpaceBackground } from "./SpaceBackground";
 import { Timeline } from "./Timeline";
+import { I18nProvider } from "@/i18n/I18nProvider";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export function ClientExperience() {
     const [loaded, setLoaded] = useState(false);
@@ -22,13 +24,14 @@ export function ClientExperience() {
     const bodyClass = useMemo(() => (loaded ? "opacity-100" : "opacity-0"), [loaded]);
 
     return (
-        <>
+        <I18nProvider>
             <LoadingScreen onDone={() => setLoaded(true)} />
             <SmoothScroll />
             <CustomCursor />
             <SpaceBackground />
             <div className={`transition-opacity duration-500 ${bodyClass}`}>
                 <Navbar />
+                <LanguageSwitcher />
                 <main>
                     <Hero />
                     <About />
@@ -41,6 +44,6 @@ export function ClientExperience() {
                 </main>
                 <Footer />
             </div>
-        </>
+        </I18nProvider>
     );
 }

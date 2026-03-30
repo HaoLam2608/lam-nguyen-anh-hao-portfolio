@@ -4,22 +4,14 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useScroll } from "framer-motion";
 import { Menu, Rocket, X } from "lucide-react";
 import clsx from "clsx";
-
-const links = [
-    { label: "Home", href: "#home" },
-    { label: "About", href: "#about" },
-    { label: "Skills", href: "#skills" },
-    { label: "Experience", href: "#experience" },
-    { label: "Education", href: "#education" },
-    { label: "Awards", href: "#awards" },
-    { label: "Projects", href: "#projects" },
-    { label: "Contact", href: "#contact" },
-];
+import { useI18n } from "@/i18n/I18nProvider";
 
 export function Navbar() {
+    const { t } = useI18n();
     const { scrollY } = useScroll();
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const links = t.navbar.links;
 
     useEffect(() => {
         return scrollY.on("change", (latest) => {
@@ -41,10 +33,10 @@ export function Navbar() {
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-cyan-300/65 bg-cyan-500/20 transition group-hover:scale-105 group-hover:shadow-[0_0_18px_rgba(94,225,255,.6)]">
                         <Rocket className="h-4 w-4 text-cyan-200" />
                     </span>
-                    LAM NGUYEN ANH HAO
+                    {t.navbar.brand}
                 </a>
 
-                <ul className="hidden items-center gap-6 text-xs font-medium uppercase tracking-[0.19em] text-slate-200 md:flex">
+                <ul className="hidden items-center gap-6 text-xs font-medium uppercase tracking-[0.19em] text-slate-200 lg:flex">
                     {links.map((link) => (
                         <li key={link.href}>
                             <a className="link-neon" href={link.href}>
@@ -58,7 +50,7 @@ export function Navbar() {
                     type="button"
                     className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-200/30 bg-slate-900/40 text-cyan-100 md:hidden"
                     onClick={() => setIsOpen((v) => !v)}
-                    aria-label="Toggle menu"
+                    aria-label={t.navbar.toggleMenuAria}
                 >
                     {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
                 </button>

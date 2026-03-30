@@ -4,24 +4,22 @@ import { motion, useReducedMotion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Briefcase, Code, Activity, Cpu } from "lucide-react";
 import { SectionTitle } from "./SectionTitle";
+import { useI18n } from "@/i18n/I18nProvider";
 
-const stats = [
-    { value: "1.5+", label: "Năm Kinh Nghiệm", icon: Briefcase },
-    { value: "15+", label: "Dự Án", icon: Code },
-    { value: "10,000+", label: "Dòng Code", icon: Activity },
-    { value: "8+", label: "Công Nghệ", icon: Cpu },
-];
+const statIcons = [Briefcase, Code, Activity, Cpu];
 
 export function About() {
+    const { t } = useI18n();
     const shouldReduceMotion = useReducedMotion();
     const [isViewerOpen, setIsViewerOpen] = useState(false);
+    const stats = t.about.stats.map((item, index) => ({ ...item, icon: statIcons[index] ?? Briefcase }));
 
     return (
         <section id="about" className="section-space px-4 md:px-8">
             <SectionTitle
-                eyebrow="Introduce"
-                title="Lam Nguyen Anh Hao"
-                description="Backend-focused Developer & Computer Science graduate from HUIT"
+                eyebrow={t.about.eyebrow}
+                title={t.about.title}
+                description={t.about.description}
             />
 
             <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-2 md:items-center">
@@ -53,7 +51,7 @@ export function About() {
                         className="mt-12 group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-slate-800/50 p-4 px-8 font-medium text-cyan-50 shadow-[0_0_40px_-10px_rgba(34,211,238,0.3)] ring-1 ring-cyan-500/30 backdrop-blur-md transition-all hover:bg-slate-700/50 hover:shadow-[0_0_60px_-15px_rgba(34,211,238,0.5)] hover:ring-cyan-400"
                     >
                         <span className="relative z-10 flex items-center gap-2">
-                            View My CV
+                            {t.about.viewCv}
                             <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
@@ -70,10 +68,10 @@ export function About() {
                     className="space-y-6"
                 >
                     <p className="text-lg leading-8 text-slate-300">
-                        I am <span className="text-cyan-400 font-semibold">Lam Nguyen Anh Hao</span>. My primary focus revolves around architecting robust backend systems, building optimal APIs, and designing scalable database structures to support long-term business logic.
+                        {t.about.paragraphs[0]}
                     </p>
                     <p className="text-lg leading-8 text-slate-300">
-                        In the short term, I aim to continuously optimize code logic, reduce system latency, and ensure high availability in production environments. Looking further ahead, my long-term goal is to master full software architecture, driving end-to-end product development and technical leadership.
+                        {t.about.paragraphs[1]}
                     </p>
 
                     <div className="grid grid-cols-2 gap-4">
@@ -92,17 +90,17 @@ export function About() {
                     <div className="mt-6 rounded-xl border border-cyan-500/20 bg-slate-900/40 p-5 backdrop-blur-sm transition-colors hover:border-cyan-500/40 hover:bg-slate-900/60">
                         <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-cyan-400">
                             <span className="h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_currentColor]"></span>
-                            Languages & Communication
+                            {t.about.languageTitle}
                         </h4>
                         <div className="space-y-3">
                             <div className="flex flex-wrap gap-x-6 gap-y-2 text-slate-200">
                                 <div className="flex items-center gap-2">
-                                    <span className="font-semibold text-white">English:</span>
+                                    <span className="font-semibold text-white">{t.about.languageEnglish}:</span>
                                     <span className="rounded bg-cyan-900/30 px-2 py-0.5 text-sm font-medium text-cyan-200">VSTEP B1</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <span className="font-semibold text-white">Vietnamese:</span>
-                                    <span className="rounded bg-cyan-900/30 px-2 py-0.5 text-sm font-medium text-cyan-200">Native Speaker</span>
+                                    <span className="font-semibold text-white">{t.about.languageVietnamese}:</span>
+                                    <span className="rounded bg-cyan-900/30 px-2 py-0.5 text-sm font-medium text-cyan-200">{t.about.nativeSpeaker}</span>
                                 </div>
                             </div>
                         </div>
@@ -127,14 +125,14 @@ export function About() {
                             className="relative flex h-full max-h-[90vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl"
                         >
                             <div className="flex items-center justify-between border-b border-white/10 bg-slate-800/50 p-4">
-                                <h3 className="text-lg font-medium text-white">Curriculum Vitae</h3>
+                                <h3 className="text-lg font-medium text-white">{t.about.modalTitle}</h3>
                                 <div className="flex items-center gap-4">
                                     <a
                                         href="/LamNguyenAnhHao_BackendDev_CV.pdf"
                                         download
                                         className="text-sm font-medium text-cyan-400 transition-colors hover:text-cyan-300"
                                     >
-                                        Download PDF
+                                        {t.about.downloadPdf}
                                     </a>
                                     <button
                                         onClick={() => setIsViewerOpen(false)}
@@ -153,14 +151,14 @@ export function About() {
                                     className="h-full w-full"
                                 >
                                     <div className="flex h-full flex-col items-center justify-center p-8 text-center text-slate-600">
-                                        <p className="mb-4 text-lg">Unable to display PDF directly.</p>
+                                        <p className="mb-4 text-lg">{t.about.cannotDisplayPdf}</p>
                                         <a
                                             href="/LamNguyenAnhHao_BackendDev_CV.pdf"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="rounded-lg bg-cyan-600 px-6 py-2 tracking-wide text-white transition-colors hover:bg-cyan-700 font-medium"
                                         >
-                                            Open in New Tab
+                                            {t.about.openInNewTab}
                                         </a>
                                     </div>
                                 </object>

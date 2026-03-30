@@ -4,13 +4,13 @@ import dynamic from "next/dynamic";
 import { useEffect, useMemo, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowDown, Send } from "lucide-react";
-
-const rotatingRoles = ["Backend Developer", "Full Stack Developer", "Computer Science Graduate"];
+import { useI18n } from "@/i18n/I18nProvider";
 const HeroOrb3D = dynamic(() => import("./HeroOrb3D").then((mod) => mod.HeroOrb3D), {
     ssr: false,
 });
 
 export function Hero() {
+    const { t } = useI18n();
     const shouldReduceMotion = useReducedMotion();
     const [roleIndex, setRoleIndex] = useState(0);
     const [typed, setTyped] = useState("");
@@ -22,7 +22,15 @@ export function Hero() {
         return window.matchMedia("(min-width: 1024px)").matches;
     });
 
-    const roleText = useMemo(() => rotatingRoles[roleIndex], [roleIndex]);
+    const rotatingRoles = t.hero.roles;
+    const roleText = useMemo(() => rotatingRoles[roleIndex], [roleIndex, rotatingRoles]);
+
+    useEffect(() => {
+        if (roleIndex >= rotatingRoles.length) {
+            setRoleIndex(0);
+            setTyped("");
+        }
+    }, [roleIndex, rotatingRoles.length]);
 
     useEffect(() => {
         let current = 0;
@@ -69,27 +77,25 @@ export function Hero() {
                     className="space-y-6"
                 >
                     <p className="inline-flex rounded-full border border-cyan-200/50 bg-cyan-300/12 px-4 py-1 text-xs uppercase tracking-[0.25em] text-cyan-100">
-                        Tan Phu District, Ho Chi Minh City, Vietnam
+                        {t.hero.location}
                     </p>
                     <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl md:text-6xl">
-                        Hello, I am Lam Nguyen Anh Hao
+                        {t.hero.greeting}
                         <span className="block bg-gradient-to-r from-cyan-200 via-sky-400 to-orange-300 bg-clip-text text-transparent">
                             {typed}
                             <span className="typing-caret">|</span>
                         </span>
                     </h1>
                     <p className="max-w-2xl text-base leading-8 text-slate-300 md:text-lg">
-                        As a Computer Science graduate, I am highly oriented towards in-depth Backend development, focusing on designing optimal APIs,
-                        database architecture, and processing complex system logic. My short-term goal is to contribute effectively to product performance
-                        and stability, then expand to full-stack architectural ownership.
+                        {t.hero.intro}
                     </p>
 
                     <div className="flex flex-wrap gap-4">
                         <a href="#projects" className="btn-neon-primary">
-                            View Projects
+                            {t.hero.viewProjects}
                         </a>
                         <a href="#contact" className="btn-neon-secondary inline-flex items-center gap-2">
-                            Contact Me <Send className="h-4 w-4" />
+                            {t.hero.contactMe} <Send className="h-4 w-4" />
                         </a>
                     </div>
                 </motion.div>
@@ -108,7 +114,7 @@ export function Hero() {
                             <div className="astronaut-card h-full w-full">
                                 <div className="planet-ring" />
                                 <div className="planet-core" />
-                                <p className="relative z-10 text-center text-sm uppercase tracking-[0.22em] text-cyan-100">Launch Ready</p>
+                                <p className="relative z-10 text-center text-sm uppercase tracking-[0.22em] text-cyan-100">{t.hero.launchReady}</p>
                             </div>
                             <div className="orbit-satellite orbit-satellite-one" />
                             <div className="orbit-satellite orbit-satellite-two" />
@@ -120,7 +126,7 @@ export function Hero() {
             <a
                 href="#about"
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 text-cyan-100/80 transition hover:text-cyan-100"
-                aria-label="Scroll to about"
+                aria-label={t.hero.scrollToAbout}
             >
                 <ArrowDown className="h-7 w-7 animate-bounce" />
             </a>
