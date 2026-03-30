@@ -25,7 +25,7 @@ export const messages = {
       text: "Igniting Warp Drive",
     },
     hero: {
-      roles: ["Backend Developer", "Full Stack Developer", "Computer Science Graduate"],
+      roles: ["Full Stack Developer", "Computer Science Graduate"],
       location: "Tan Phu District, Ho Chi Minh City, Vietnam",
       greeting: "Hello, I am Lam Nguyen Anh Hao",
       intro:
@@ -109,7 +109,7 @@ export const messages = {
       eyebrow: "Honors",
       title: "Awards & Recognition",
       description: "Notable achievements and recognition for academic excellence and research contributions.",
-      period: "2024 -- 2025",
+      period: "02/2025 -- 06/2025",
       award: "First Prize - Faculty-level Student Scientific Research Competition",
       organization: "Ho Chi Minh City University of Industry and Trade (HUIT)",
       topic: "Topic: Degree Presentation Application based on Blockchain leveraging Hyperledger Fabric.",
@@ -125,6 +125,7 @@ export const messages = {
         ecommerce: "E-commerce Platform",
         blockchain: "Blockchain Platform",
         management: "Management System",
+        landing: "Landing Page",
       },
       roleLabel: "Role",
       details: "Details",
@@ -134,7 +135,8 @@ export const messages = {
       techStack: "Tech Stack",
       screenLabel: "Screen",
       technologiesUsed: "Technologies used",
-      visitProject: "Visit live project",
+      visitProject: "Live Demo",
+      viewCaseStudy: "View Case Study",
       close: "Close",
     },
     contact: {
@@ -181,7 +183,7 @@ export const messages = {
       text: "Khởi động động cơ Warp",
     },
     hero: {
-      roles: ["Lập trình viên Backend", "Lập trình viên Full Stack", "Cử nhân Khoa học Máy tính"],
+      roles: ["Lập trình viên Full Stack", "Cử nhân Khoa học Máy tính"],
       location: "Quận Tân Phú, TP. Hồ Chí Minh, Việt Nam",
       greeting: "Xin chào, tôi là Lâm Nguyễn Anh Hào",
       intro:
@@ -217,7 +219,7 @@ export const messages = {
     },
     skills: {
       eyebrow: "Kỹ năng",
-      title: "Kỹ năng kỹ thuật",
+      title: "Kỹ năng",
       description:
         "Toàn bộ stack kỹ thuật được tổng hợp từ CV, với Backend là nền tảng cốt lõi và khả năng triển khai full-stack trên hệ thống production.",
       ecosystem: "Hệ sinh thái kỹ thuật",
@@ -265,7 +267,7 @@ export const messages = {
       eyebrow: "Thành tích",
       title: "Giải thưởng & Ghi nhận",
       description: "Các thành tích nổi bật và ghi nhận về học thuật, nghiên cứu khoa học.",
-      period: "2024 -- 2025",
+      period: "02/2025 -- 06/2025",
       award: "Giải Nhất - Cuộc thi Nghiên cứu Khoa học Sinh viên cấp Khoa",
       organization: "Trường Đại học Công Thương TP. Hồ Chí Minh (HUIT)",
       topic: "Đề tài: Ứng dụng trình ký văn bằng dựa trên Blockchain sử dụng Hyperledger Fabric.",
@@ -281,6 +283,7 @@ export const messages = {
         ecommerce: "Nền tảng thương mại điện tử",
         blockchain: "Nền tảng Blockchain",
         management: "Hệ thống quản lý",
+        landing: "Landing Page",
       },
       roleLabel: "Vai trò",
       details: "Chi tiết",
@@ -290,7 +293,8 @@ export const messages = {
       techStack: "Công nghệ",
       screenLabel: "Màn hình",
       technologiesUsed: "Công nghệ sử dụng",
-      visitProject: "Truy cập dự án",
+      visitProject: "Live Demo",
+      viewCaseStudy: "Xem Chi Tiết",
       close: "Đóng",
     },
     contact: {
@@ -322,10 +326,11 @@ export const messages = {
 
 export type AppMessages = (typeof messages)[Locale];
 
-export type ProjectCategory = "all" | "education" | "ecommerce" | "blockchain" | "management";
+export type ProjectCategory = "all" | "education" | "ecommerce" | "blockchain" | "management" | "landing";
 
 export type ProjectItem = {
   title: string;
+  time: string;
   description: string;
   overview: string;
   category: ProjectCategory;
@@ -336,6 +341,7 @@ export type ProjectItem = {
   highlights: string[];
   demo: string;
   gallery?: string[];
+  landingPages?: { url: string; title: string; category?: string; image?: string; }[];
   articleLink?: string;
 };
 
@@ -343,6 +349,7 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
   en: [
     {
       title: "Tafas | Modern Fashion E-commerce Platform",
+      time: "12/2025 - Present",
       description: "Engineered a multi-tier promotion system and high-reliability discount workflows for a modern commerce platform.",
       overview:
         "Tafas is a production e-commerce platform where I focused on building a resilient backend pricing core for high-traffic campaigns. The system needed to support many promotion models at once while preserving data consistency across checkout, inventory, and voucher usage flows. I designed service logic and transactional boundaries so discount calculations remain predictable under concurrent orders and real-world load.",
@@ -380,6 +387,7 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
     },
     {
       title: "Smarthmath | Smart Math Learning Platform",
+      time: "07/2025 - 11/2025",
       description: "Built a production-ready learning platform backend with analytics, admin workflows, and scalable data pipelines.",
       overview:
         "Smarthmath is an EdTech system serving daily learning operations for students, parents, teachers, and administrators. I developed backend services for progress analytics, class lifecycle management, and notification workflows that keep users engaged with timely reminders and updates. The architecture was tuned for long-term maintainability, strict role control, and stable handling of large learning-history datasets.",
@@ -417,6 +425,7 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
     },
     {
       title: "Degree Presentation Application | Blockchain & AI Platform",
+      time: "02/2025 - 06/2025",
       description: "Delivered a blockchain-based degree presentation and verification platform with distributed storage and AI-assisted validation.",
       overview:
         "This project provides a trust-first platform for issuing, presenting, and verifying academic credentials with auditability at every step. I designed the end-to-end integration between AI-assisted document checks, cryptographic signing, IPFS storage, and Hyperledger Fabric recording so each credential can be validated transparently. The result is a scalable verification flow that reduces manual effort while strengthening authenticity and non-repudiation.",
@@ -454,6 +463,7 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
     },
     {
       title: "Project & Task Management System | Web & Mobile Application",
+      time: "09/2025 - 12/2025",
       description: "A cross-platform workflow system for task delegation, real-time collaboration, and synchronized operations.",
       overview:
         "This project is a full workflow management ecosystem spanning web and mobile for managers and operational teams. I implemented core modules for assignment, progress tracking, timesheet logging, approvals, and real-time coordination to keep execution synchronized across devices. The platform combines Socket.IO, mobile push notifications, and CI/CD-ready deployment practices to deliver dependable day-to-day operations in enterprise environments.",
@@ -490,10 +500,46 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
       ],
       demo: "https://github.com/HaoLam2608/quanlycongviec.git",
     },
+    {
+      title: "Landing Pages Collection",
+      time: "01/2026 - Present",
+      description: "A collection of high-performance, conversion-optimized landing pages.",
+      overview:
+        "These landing pages are designed to maximize user engagement and conversion rates. I implemented responsive layouts, optimized asset loading, and integrated smooth animations to create compelling user experiences across all devices. Each page is tailored to its specific marketing campaign goals.",
+      category: "landing",
+      role: "Frontend Developer",
+      technologies: "Next.js; Tailwind CSS; Framer Motion",
+      highlights: [
+        "Responsive Design: Fluid layouts that adapt perfectly to mobile, tablet, and desktop screens.",
+        "Performance Optimization: Fast loading times and high core web vitals scores.",
+        "Animations: Smooth scrolling and interactive elements using Framer Motion.",
+      ],
+      achievements: [
+        "Successfully deployed multiple production websites for real businesses",
+        "Achieved high Lighthouse scores across all projects",
+        "Delivered pixel-perfect designs matching client specifications",
+        "Built reusable component libraries accelerating future development"
+      ],
+      demo: "https://eventlanding.covasol.io.vn/",
+      gallery: ["/landingpage/main.png"],
+      landingPages: [
+        {
+          url: "https://eventlanding.covasol.io.vn/",
+          title: "Event Landing Page",
+          category: "Events & Marketing",
+        },
+        {
+          url: "https://homestay.covasol.io.vn/",
+          title: "Homestay Booking",
+          category: "Hospitality & Travel",
+        }
+      ]
+    },
   ],
   vi: [
     {
       title: "Tafas | Nền tảng Thương mại Điện tử Thời trang",
+      time: "12/2025 - Hiện tại",
       description: "Xây dựng hệ thống khuyến mãi đa tầng và luồng giảm giá độ tin cậy cao cho nền tảng thương mại điện tử hiện đại.",
       overview:
         "Tafas là nền tảng thương mại điện tử vận hành thực tế, trong đó tôi tập trung phát triển lõi backend cho bài toán giá và khuyến mãi ở tải cao. Hệ thống phải đồng thời hỗ trợ nhiều cơ chế ưu đãi nhưng vẫn đảm bảo nhất quán dữ liệu giữa giỏ hàng, tồn kho và giới hạn voucher. Tôi thiết kế logic dịch vụ và ranh giới giao dịch để phép tính giảm giá luôn ổn định khi có nhiều đơn hàng xử lý đồng thời.",
@@ -531,6 +577,7 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
     },
     {
       title: "Smarthmath | Nền tảng Học Toán Thông minh",
+      time: "07/2025 - 11/2025",
       description: "Xây dựng backend production cho nền tảng học tập với phân tích dữ liệu, quy trình quản trị và pipeline mở rộng.",
       overview:
         "Smarthmath là hệ thống EdTech phục vụ vận hành học tập hằng ngày cho học viên, phụ huynh, giáo viên và quản trị viên. Tôi phát triển các dịch vụ backend cho phân tích tiến độ, quản lý vòng đời lớp học và luồng thông báo giúp tăng tương tác đúng thời điểm. Kiến trúc được tối ưu cho khả năng bảo trì dài hạn, phân quyền chặt chẽ và xử lý ổn định khối lượng lớn dữ liệu lịch sử học tập.",
@@ -568,6 +615,7 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
     },
     {
       title: "Ứng dụng Trình bày Bằng cấp | Nền tảng Blockchain & AI",
+      time: "02/2025 - 06/2025",
       description: "Triển khai nền tảng trình bày/xác minh văn bằng trên Blockchain với lưu trữ phân tán và kiểm chứng có hỗ trợ AI.",
       overview:
         "Dự án xây dựng nền tảng xác thực văn bằng theo định hướng trust-first, đảm bảo truy vết đầy đủ cho từng bước xử lý. Tôi thiết kế tích hợp end-to-end giữa kiểm chứng tài liệu bằng AI, ký số mật mã, lưu trữ IPFS và ghi nhận Hyperledger Fabric để mỗi văn bằng có thể xác minh minh bạch. Kết quả là một quy trình xác thực mở rộng tốt, giảm thao tác thủ công và tăng mạnh độ tin cậy dữ liệu.",
@@ -605,6 +653,7 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
     },
     {
       title: "Hệ thống Quản lý Dự án & Công việc | Ứng dụng Web & Mobile",
+      time: "09/2025 - 12/2025",
       description: "Hệ thống workflow đa nền tảng cho giao việc, cộng tác thời gian thực và đồng bộ dữ liệu xuyên suốt.",
       overview:
         "Đây là hệ sinh thái quản trị công việc đa nền tảng cho cả quản lý và nhân sự vận hành trên web lẫn mobile. Tôi triển khai các module lõi cho giao việc, theo dõi tiến độ, timesheet, phê duyệt và phối hợp realtime để giữ luồng công việc đồng bộ giữa nhiều thiết bị. Nền tảng kết hợp Socket.IO, push notification trên mobile và quy trình CI/CD để đảm bảo vận hành ổn định trong môi trường doanh nghiệp.",
@@ -640,6 +689,41 @@ export const projectsByLocale: Record<Locale, ProjectItem[]> = {
         "Kết quả: Hệ thống chạy mượt trên cả web/mobile với độ trễ realtime thấp và pipeline CI/CD sẵn sàng vận hành doanh nghiệp.",
       ],
       demo: "https://github.com/HaoLam2608/quanlycongviec.git",
+    },
+    {
+      title: "Tuyển tập Landing Pages",
+      time: "01/2026 - Hiện tại",
+      description: "Bộ sưu tập các landing page tối ưu hóa hiệu suất và tỷ lệ chuyển đổi cao.",
+      overview:
+        "Những landing page này được phát triển với mục đích tối đa hóa tương tác và tỷ lệ chuyển đổi của người dùng. Tôi đã triển khai các bố cục responsive hoàn toàn, tối ưu thời gian tải trang và tích hợp hiệu ứng chuyển động mượt mà để mang lại trải nghiệm ưng ý nhất trên mọi thiết bị.",
+      category: "landing",
+      role: "Lập trình viên Frontend",
+      technologies: "Next.js; Tailwind CSS; Framer Motion",
+      highlights: [
+        "Thiết kế Responsive: Bố cục linh hoạt, hiển thị hoàn hảo trên màn hình điện thoại, máy tính bảng và desktop.",
+        "Tối ưu Hiệu suất: Tốc độ tải trang nhanh và đạt điểm số lý tưởng về web vitals.",
+        "Hiệu ứng & Animation: Cuộn trang mượt mà cùng các yếu tố tương tác được điều khiển bằng Framer Motion.",
+      ],
+      achievements: [
+        "Triển khai thành công nhiều website thực tế cho các doanh nghiệp",
+        "Đạt điểm số Lighthouse cao trên tất cả các dự án",
+        "Thiết kế pixel-perfect chính xác với yêu cầu của khách hàng",
+        "Xây dựng thư viện component tái sử dụng giúp tăng tốc độ phát triển tương lai"
+      ],
+      demo: "https://eventlanding.covasol.io.vn/",
+      gallery: ["/landingpage/main.png"],
+      landingPages: [
+        {
+          url: "https://eventlanding.covasol.io.vn/",
+          title: "Event Landing Page",
+          category: "Sự kiện & Marketing",
+        },
+        {
+          url: "https://homestay.covasol.io.vn/",
+          title: "Homestay Booking",
+          category: "Lưu trú & Du lịch",
+        }
+      ]
     },
   ],
 };

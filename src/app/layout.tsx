@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
-import { Orbitron, Space_Grotesk } from "next/font/google";
+import { Inter, Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 
-const headingFont = Orbitron({
+const headingFont = Be_Vietnam_Pro({
   variable: "--font-heading",
-  subsets: ["latin"],
-  weight: ["500", "700", "800"],
+  subsets: ["latin", "vietnamese"],
+  weight: ["500", "600", "700", "800"],
 });
 
-const bodyFont = Space_Grotesk({
+const bodyFont = Inter({
   variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Lam Nguyen Anh Hao | Backend & Full Stack Developer",
+  title: "Lam Nguyen Anh Hao | Full Stack Developer",
   description: "Portfolio of Lam Nguyen Anh Hao - Backend-focused Full Stack Developer with experience in APIs, databases, and production commerce systems.",
 };
 

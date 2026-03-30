@@ -9,10 +9,18 @@ import { useI18n } from "@/i18n/I18nProvider";
 const statIcons = [Briefcase, Code, Activity, Cpu];
 
 export function About() {
-    const { t } = useI18n();
+    const { t, locale } = useI18n();
     const shouldReduceMotion = useReducedMotion();
     const [isViewerOpen, setIsViewerOpen] = useState(false);
+    const [cvLang, setCvLang] = useState<'en' | 'vi'>(locale);
     const stats = t.about.stats.map((item, index) => ({ ...item, icon: statIcons[index] ?? Briefcase }));
+
+    const cvUrls = {
+        en: "/LamNguyenAnhHao_FullstackDev_CV.pdf",
+        vi: "/LamNguyenAnhHao_FullstackDev_CV_VN.pdf"
+    };
+
+    const currentCvUrl = cvUrls[cvLang];
 
     return (
         <section id="about" className="section-space px-4 md:px-8">
@@ -47,7 +55,10 @@ export function About() {
                     </div>
 
                     <button
-                        onClick={() => setIsViewerOpen(true)}
+                        onClick={() => {
+                            setCvLang(locale);
+                            setIsViewerOpen(true);
+                        }}
                         className="mt-12 group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-slate-800/50 p-4 px-8 font-medium text-cyan-50 shadow-[0_0_40px_-10px_rgba(34,211,238,0.3)] ring-1 ring-cyan-500/30 backdrop-blur-md transition-all hover:bg-slate-700/50 hover:shadow-[0_0_60px_-15px_rgba(34,211,238,0.5)] hover:ring-cyan-400"
                     >
                         <span className="relative z-10 flex items-center gap-2">
@@ -125,10 +136,26 @@ export function About() {
                             className="relative flex h-full max-h-[90vh] w-full max-w-6xl flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-900 shadow-2xl"
                         >
                             <div className="flex items-center justify-between border-b border-white/10 bg-slate-800/50 p-4">
-                                <h3 className="text-lg font-medium text-white">{t.about.modalTitle}</h3>
+                                <div className="flex items-center gap-4">
+                                    <h3 className="text-lg font-medium text-white">{t.about.modalTitle}</h3>
+                                    <div className="flex items-center rounded-lg border border-cyan-500/30 bg-slate-900/50 p-1">
+                                        <button
+                                            onClick={() => setCvLang('en')}
+                                            className={`rounded-md px-3 py-1 text-sm transition-all ${cvLang === 'en' ? 'bg-cyan-500 text-white shadow-sm' : 'text-slate-400 hover:text-white'}`}
+                                        >
+                                            EN
+                                        </button>
+                                        <button
+                                            onClick={() => setCvLang('vi')}
+                                            className={`rounded-md px-3 py-1 text-sm transition-all ${cvLang === 'vi' ? 'bg-cyan-500 text-white shadow-sm' : 'text-slate-400 hover:text-white'}`}
+                                        >
+                                            VI
+                                        </button>
+                                    </div>
+                                </div>
                                 <div className="flex items-center gap-4">
                                     <a
-                                        href="/LamNguyenAnhHao_BackendDev_CV.pdf"
+                                        href={currentCvUrl}
                                         download
                                         className="text-sm font-medium text-cyan-400 transition-colors hover:text-cyan-300"
                                     >
@@ -146,14 +173,15 @@ export function About() {
                             </div>
                             <div className="flex-1 overflow-hidden bg-slate-100">
                                 <object
-                                    data="/LamNguyenAnhHao_BackendDev_CV.pdf#toolbar=0"
+                                    key={currentCvUrl}
+                                    data={`${currentCvUrl}#toolbar=0`}
                                     type="application/pdf"
                                     className="h-full w-full"
                                 >
                                     <div className="flex h-full flex-col items-center justify-center p-8 text-center text-slate-600">
                                         <p className="mb-4 text-lg">{t.about.cannotDisplayPdf}</p>
                                         <a
-                                            href="/LamNguyenAnhHao_BackendDev_CV.pdf"
+                                            href={currentCvUrl}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="rounded-lg bg-cyan-600 px-6 py-2 tracking-wide text-white transition-colors hover:bg-cyan-700 font-medium"
