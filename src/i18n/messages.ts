@@ -29,7 +29,7 @@ export const messages = {
       location: "Tan Phu District, Ho Chi Minh City, Vietnam",
       greeting: "Hello, I am Lam Nguyen Anh Hao",
       intro:
-        "As a Computer Science graduate, I am highly oriented towards in-depth Backend development, focusing on designing optimal APIs, database architecture, and processing complex system logic. My short-term goal is to contribute effectively to product performance and stability, then expand to full-stack architectural ownership.",
+        "Software Engineer with over 1 year of hands-on experience, specializing in Backend architecture in the Node.js, NestJS, and ExpressJS ecosystem, complemented by Full-Stack capabilities. I focus on building high-performance APIs, robust data flows, and production-ready systems.",
       viewProjects: "View Projects",
       contactMe: "Contact Me",
       launchReady: "Launch Ready",
@@ -41,8 +41,8 @@ export const messages = {
       description: "Backend-focused Developer & Computer Science graduate from HUIT",
       viewCv: "View My CV",
       paragraphs: [
-        "I am Lam Nguyen Anh Hao. My primary focus revolves around architecting robust backend systems, building optimal APIs, and designing scalable database structures to support long-term business logic.",
-        "In the short term, I aim to continuously optimize code logic, reduce system latency, and ensure high availability in production environments. Looking further ahead, my long-term goal is to master full software architecture, driving end-to-end product development and technical leadership.",
+        "I am Lam Nguyen Anh Hao. I have directly architected and deployed complex systems into production across ERP, E-commerce, EdTech, and Blockchain domains. My core competencies include high-performance RESTful APIs, database optimization (race-condition handling and transactional integrity), granular RBAC design, and real-time/AI data stream integration.",
+        "My short-term goal is to leverage deep backend expertise together with end-to-end ownership, from VPS and deployment operations to Next.js interface integration, to optimize overall product performance. In the long term, I aim to become a System Architect designing robust, highly scalable frameworks that create direct business impact.",
       ],
       stats: [
         { value: "1.5+", label: "Years of Experience" },
@@ -85,11 +85,12 @@ export const messages = {
       company: "SOF - Solution of Future",
       location: "Ho Chi Minh City, Vietnam",
       bullets: [
-        "Designed and implemented core ERP modules including Inventory and Sales, building APIs for complex business logic and optimized operational workflows.",
-        "Delivered a dedicated Task Management module with automated assignment-report-approval workflows to improve cross-functional execution.",
-        "Integrated ZaloPay and SePay with secure webhook and reconciliation handling, enabling reliable and automated transaction pipelines.",
-        "Built an ERP-wide internal mobile application for cross-module operations, enabling flexible staff access and real-time status updates.",
-        "Configured and operated VPS/server infrastructure including DNS, domain routing for Web/API services, and Nginx setup.",
+        "Participated in architecture design and full-stack implementation of core ERP modules including Inventory Management and Sales, building APIs for complex business logic and optimized resource operations.",
+        "Analyzed business requirements and delivered a dedicated project/task management module with automated assignment-report-approval workflows to improve cross-functional execution efficiency.",
+        "Researched and integrated electronic payment gateways (ZaloPay, SePay, etc.), implementing secure webhook handling, transaction reconciliation, and fully automated payment pipelines.",
+        "Built an internal ERP-wide mobile application that covers multiple modules, enabling staff to access operations, update task states, and maintain real-time workflow continuity.",
+        "Directly configured and operated VPS/server infrastructure, including DNS management, domain routing for Web/API services, and Nginx setup.",
+        "Contributed to live ERP ecosystem operations (Web & Mobile), enabling full payment-flow automation and stable production delivery while improving inventory process efficiency and internal productivity.",
       ],
     },
     education: {
@@ -188,7 +189,7 @@ export const messages = {
       location: "Quận Tân Phú, TP. Hồ Chí Minh, Việt Nam",
       greeting: "Xin chào, tôi là Lâm Nguyễn Anh Hào",
       intro:
-        "Là cử nhân Khoa học Máy tính, tôi định hướng mạnh vào Backend chuyên sâu, tập trung thiết kế API tối ưu, kiến trúc cơ sở dữ liệu và xử lý logic hệ thống phức tạp. Mục tiêu ngắn hạn của tôi là đóng góp hiệu quả vào hiệu năng và độ ổn định sản phẩm, sau đó mở rộng sang vai trò làm chủ kiến trúc full-stack.",
+        "Tôi là Kỹ sư Phần mềm với hơn 1 năm kinh nghiệm thực chiến, có thế mạnh chuyên sâu về kiến trúc Backend trên hệ sinh thái Node.js, NestJS và ExpressJS, đồng thời có khả năng triển khai Full-Stack trên các hệ thống production.",
       viewProjects: "Xem dự án",
       contactMe: "Liên hệ",
       launchReady: "Sẵn sàng khởi động",
@@ -200,8 +201,8 @@ export const messages = {
       description: "Lập trình viên định hướng Backend & Cử nhân Khoa học Máy tính tại HUIT",
       viewCv: "Xem CV",
       paragraphs: [
-        "Tôi là Lâm Nguyễn Anh Hào. Trọng tâm chuyên môn của tôi là xây dựng hệ thống backend vững chắc, phát triển API tối ưu và thiết kế cấu trúc cơ sở dữ liệu có khả năng mở rộng để phục vụ logic nghiệp vụ dài hạn.",
-        "Trong ngắn hạn, tôi hướng đến tối ưu liên tục logic code, giảm độ trễ hệ thống và đảm bảo tính sẵn sàng cao trong môi trường production. Về dài hạn, mục tiêu của tôi là làm chủ kiến trúc phần mềm toàn diện, dẫn dắt phát triển sản phẩm từ đầu đến cuối.",
+        "Tôi đã trực tiếp thiết kế và đưa vào vận hành các hệ thống phức tạp như ERP, Thương mại điện tử, EdTech và Blockchain. Năng lực cốt lõi của tôi gồm xây dựng RESTful API hiệu suất cao, tối ưu cơ sở dữ liệu (xử lý race condition, database transactions), thiết kế phân quyền chi tiết (granular RBAC) và tích hợp luồng dữ liệu Real-time/AI.",
+        "Mục tiêu ngắn hạn của tôi là kết hợp thế mạnh Backend với năng lực làm chủ quy trình End-to-End, từ triển khai VPS đến tích hợp giao diện Next.js, để tối ưu toàn diện hiệu năng sản phẩm. Về dài hạn, tôi hướng tới vai trò System Architect, thiết kế các kiến trúc hệ thống vững chắc, chịu tải lớn và tạo giá trị trực tiếp cho doanh nghiệp.",
       ],
       stats: [
         { value: "1.5+", label: "Năm kinh nghiệm" },
@@ -244,11 +245,12 @@ export const messages = {
       company: "SOF - Solution of Future",
       location: "TP. Hồ Chí Minh, Việt Nam",
       bullets: [
-        "Tham gia thiết kế và phát triển các phân hệ ERP cốt lõi như Quản lý Kho và Bán hàng, xây dựng API xử lý logic nghiệp vụ phức tạp để tối ưu vận hành.",
-        "Xây dựng module Quản trị Công việc với luồng giao việc-báo cáo-phê duyệt tự động, nâng cao hiệu suất phối hợp giữa các phòng ban.",
-        "Tích hợp các cổng thanh toán ZaloPay, SePay với cơ chế webhook an toàn, đối soát dữ liệu và tự động hóa luồng giao dịch.",
-        "Phát triển ứng dụng mobile nội bộ bao phủ toàn bộ hệ sinh thái ERP, hỗ trợ truy cập đa phân hệ và cập nhật trạng thái thời gian thực.",
-        "Thiết lập và vận hành hạ tầng VPS/Server gồm DNS, trỏ domain cho dịch vụ Web/API và cấu hình Nginx.",
+        "Tham gia thiết kế kiến trúc và lập trình full-stack các phân hệ ERP cốt lõi như Quản lý Kho và Quản lý Bán hàng; xây dựng API xử lý logic nghiệp vụ phức tạp để tối ưu dòng chảy vận hành.",
+        "Phân tích yêu cầu nghiệp vụ và xây dựng module Quản trị Công việc chuyên sâu, thiết lập workflow giao việc - báo cáo - phê duyệt tự động nhằm nâng cao hiệu suất phối hợp giữa các phòng ban.",
+        "Nghiên cứu và tích hợp thành công các cổng thanh toán điện tử (ZaloPay, SePay, ...), triển khai cơ chế webhook an toàn, đối soát dữ liệu và tự động hóa hoàn toàn quy trình giao dịch.",
+        "Phát triển ứng dụng mobile nội bộ bao phủ hệ sinh thái ERP, cho phép nhân sự truy cập đa phân hệ, cập nhật trạng thái và duy trì luồng dữ liệu thời gian thực xuyên suốt.",
+        "Trực tiếp thiết lập và vận hành hạ tầng VPS/Server, bao gồm quản lý DNS, trỏ domain cho dịch vụ Web/API và cấu hình Nginx.",
+        "Kết quả: Đóng góp vận hành hệ sinh thái ERP (Web & Mobile) thực tế, hỗ trợ tự động hóa toàn bộ luồng thanh toán và đối soát, đồng thời duy trì môi trường production ổn định và nâng cao hiệu suất nội bộ.",
       ],
     },
     education: {
