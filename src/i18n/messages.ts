@@ -162,11 +162,12 @@ export const messages = {
     },
     footer: {
       text: "Lam Nguyen Anh Hao | Ho Chi Minh City, Vietnam | haolam2684@gmail.com",
+      visitsLabel: "Total visits",
     },
   },
   vi: {
     navbar: {
-      brand: "LAM NGUYEN ANH HAO",
+      brand: "LÂM NGUYỄN ANH HÀO",
       toggleMenuAria: "Mở menu",
       links: [
         { label: "Trang chủ", href: "#home" },
@@ -319,7 +320,8 @@ export const messages = {
       },
     },
     footer: {
-      text: "Lâm Nguyễn Anh ào | TP. Hồ Chí Minh, Việt Nam | haolam2684@gmail.com",
+      text: "Lâm Nguyễn Anh Hào | TP. Hồ Chí Minh, Việt Nam | haolam2684@gmail.com",
+      visitsLabel: "Lượt truy cập",
     },
   },
 } as const;
