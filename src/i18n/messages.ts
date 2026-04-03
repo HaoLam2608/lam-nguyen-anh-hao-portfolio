@@ -25,7 +25,7 @@ export const messages = {
       text: "Igniting Warp Drive",
     },
     hero: {
-      roles: ["Full Stack Developer", "Computer Science Graduate"],
+      roles: ["Full Stack Developer", "Software Engineering Graduate"],
       location: "Tan Phu District, Ho Chi Minh City, Vietnam",
       greeting: "Hello, I am Lam Nguyen Anh Hao",
       intro:
@@ -38,7 +38,7 @@ export const messages = {
     about: {
       eyebrow: "Introduce",
       title: "Lam Nguyen Anh Hao",
-      description: "Backend-focused Developer & Computer Science graduate from HUIT",
+      description: "Backend-focused Developer & Software Engineering graduate from HUIT",
       viewCv: "View My CV",
       paragraphs: [
         "I am Lam Nguyen Anh Hao. I have directly architected and deployed complex systems into production across ERP, E-commerce, EdTech, and Blockchain domains. My core competencies include high-performance RESTful APIs, database optimization (race-condition handling and transactional integrity), granular RBAC design, and real-time/AI data stream integration.",
@@ -185,7 +185,7 @@ export const messages = {
       text: "Khởi động động cơ Warp",
     },
     hero: {
-      roles: ["Lập trình viên Full Stack", "Cử nhân Khoa học Máy tính"],
+      roles: ["Lập trình viên Full Stack", "Cử nhân Công Nghệ Phần Mềm"],
       location: "Quận Tân Phú, TP. Hồ Chí Minh, Việt Nam",
       greeting: "Xin chào, tôi là Lâm Nguyễn Anh Hào",
       intro:
@@ -198,7 +198,7 @@ export const messages = {
     about: {
       eyebrow: "Giới thiệu",
       title: "Lâm Nguyễn Anh Hào",
-      description: "Lập trình viên định hướng Backend & Cử nhân Khoa học Máy tính tại HUIT",
+      description: "Lập trình viên định hướng Backend & Cử nhân Công Nghệ Phần Mềm tại HUIT",
       viewCv: "Xem CV",
       paragraphs: [
         "Tôi đã trực tiếp thiết kế và đưa vào vận hành các hệ thống phức tạp như ERP, Thương mại điện tử, EdTech và Blockchain. Năng lực cốt lõi của tôi gồm xây dựng RESTful API hiệu suất cao, tối ưu cơ sở dữ liệu (xử lý race condition, database transactions), thiết kế phân quyền chi tiết (granular RBAC) và tích hợp luồng dữ liệu Real-time/AI.",
